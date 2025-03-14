@@ -1,4 +1,4 @@
-# TikTok_Engagement_Analyzer
+# ♪ TikTok_Engagement_Analyzer
 
 I'm Saghar Yeganehparast, currently a sophomore Computer Science and Engineering student with a minor in Business Analytics at Sabancı University.
 
@@ -46,31 +46,31 @@ The analysis will be conducted using both personal data collected directly from 
   - Total hours spent on TikTok daily. *(Collected through TikTok app)*
 
 ### External Influencing Factors:
-  **1. Major Global Events**
-   - Medical
-   - Religious
-   - Political
-   - Social/Cultural
-   - Music-related
-   - Sports-related
-   - Fashion-related
-   - Competitions/Award shows
-   - Etc. *(All collected through manual research or calenders)*
+   - **Major Global Events**
+     - Medical
+     - Religious
+     - Political
+     - Social/Cultural
+     - Music-related
+     - Sports-related
+     - Fashion-related
+     - Competitions/Award shows
+     - Etc. *(All collected through manual research or calendars)*
 
-  **2. Weather Conditions**
-   - Temperature *(Collected through Weather app)*
-   - Precipitation *(Collected through Weather app)*
+   - **Weather Conditions**
+     - Temperature *(Collected through Weather app)*
+     - Precipitation *(Collected through Weather app)*
 
 ### Personal Influencing Factors:
-  **1. Total daily screen time**
-   - *Collected through the Samsung Health application*
+   - **Total Daily Screen Time**
+     - *Collected through the Samsung Health application*
 
-  **2. Sleep duration from the previous night**
-   - *Collected through the Samsung Health application*
+   - **Sleep Duration from the Previous Night**
+     - *Collected through the Samsung Health application*
 
-  **3. Academic responsibilities**
-   - Exam schedules *(Collected through Sabancı University Website)*
-   - Course schedules *(Collected through Sabancı University Website)*
+   - **Academic Responsibilities**
+     - Exam schedules *(Collected through Sabancı University Website)*
+     - Course schedules *(Collected through Sabancı University Website)*
 
 ---
 
