@@ -6,6 +6,17 @@ This is my term project for DSA 210 (Introduction to Data Science).
 
 ---
 
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Motivation](#motivation)
+3. [Data Collection & Sources](#data-collection--sources)
+   - [Primary Data Source](#the-primary-data-source)
+   - [External Influencing Factors](#external-influencing-factors)
+   - [Personal Influencing Factors](#personal-influencing-factors)
+     
+---
+
 ## Introduction
 Understanding digital consumption patterns has become increasingly important in recent years, where social media plays a significant role in most people's daily lives. This project aims to analyze my personal TikTok usage over the past six months, identifying correlations between usage patterns and various external and personal factors. The ultimate goal is to develop a predictive model that estimates future TikTok consumption based on these influencing variables.
 
