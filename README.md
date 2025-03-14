@@ -17,13 +17,21 @@ This is my term project for DSA 210 (Introduction to Data Science).
      
 ---
 
-## Introduction
+## Project Overview
 Understanding digital consumption patterns has become increasingly important in recent years, where social media plays a significant role in most people's daily lives. This project aims to analyze my personal TikTok usage over the past six months, identifying correlations between usage patterns and various external and personal factors. The ultimate goal is to develop a predictive model that estimates future TikTok consumption based on these influencing variables.
 
 ---
 
+## Objectives  
+- **Analyze** TikTok usage patterns over a few months.  
+- **Identify factors** influencing engagement (like global events, weather, and academic schedules).  
+- **Build a predictive model** for future TikTok consumption.  
+- **Apply data science skills** in a real world context.  
+
+---
+
 ## Motivation
-Since TikTok is the social media app I use the most, analyzing my consumption patterns can provide valuable insights into behavioral trends. It will also allow me to make more informed decisions about my screen time and digital well-being.
+Since TikTok is the social media app I use the most, analyzing my consumption patterns can provide valuable insights into behavioral trends. It will also allow me to make more informed decisions/predictions about my screen time and digital well-being.
 
 ---
 
