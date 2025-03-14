@@ -15,7 +15,8 @@ This is my term project for DSA 210 (Introduction to Data Science).
    - [The Primary Data Source](#the-primary-data-source)
    - [External Influencing Factors](#external-influencing-factors)
    - [Personal Influencing Factors](#personal-influencing-factors)
-5. [Example Data Table](#example-data-table)
+5. [Possible Tools & Libraries To Be Used](#possible-tools--libraries-to-be-used)
+6. [Example Data Table](#example-data-table)
 
 ---
 
@@ -41,8 +42,8 @@ Since TikTok is the social media app I use the most, analyzing my consumption pa
 The analysis will be conducted using both personal data collected directly from TikTok and additional data from external sources that may influence my media consumption:
 
 ### The Primary Data Source:
-  - Frequency of app usage per day.
-  - Total hours spent on TikTok daily.
+  - Frequency of app usage per day. *(Collected through TikTok app)*
+  - Total hours spent on TikTok daily. *(Collected through TikTok app)*
 
 ### External Influencing Factors:
   **1. Major Global Events**
@@ -54,26 +55,45 @@ The analysis will be conducted using both personal data collected directly from 
    - Sports-related
    - Fashion-related
    - Competitions/Award shows
-   - Etc.
+   - Etc. *(All collected through manual research or calenders)*
 
   **2. Weather Conditions**
-   - Temperature
-   - Precipitation
+   - Temperature *(Collected through Weather app)*
+   - Precipitation *(Collected through Weather app)*
 
 ### Personal Influencing Factors:
   **1. Total daily screen time**
-   - Collected through the mobile phone's utility application
+   - *Collected through the Samsung Health application*
 
   **2. Sleep duration from the previous night**
-   - Collected through the Samsung Health application
+   - *Collected through the Samsung Health application*
 
   **3. Academic responsibilities**
-   - Exam schedules
-   - Course schedules
+   - Exam schedules *(Collected through Sabancı University Website)*
+   - Course schedules *(Collected through Sabancı University Website)*
 
 ---
 
-## Example Data Table: 
+## Possible Tools & Libraries To Be Used
+
+**1. Programming Language:**
+- **Python**: For data analysis and model building.
+
+**2. Data Analysis & Machine Learning:**
+- **Pandas**: For data manipulation/analysis.
+
+**4. Data Visualization:**
+- **Matplotlib**: For creating data visualizations.
+
+**5. Data Collection:**
+- **TikTok**: To collect personal usage data.
+- **Weather App**: To get weather data for analysis.
+- **Samsung Health App**: To get screen time and sleep data for analysis.
+- **Sabancı University Website**: To get course/exam schedules for analysis.
+
+---
+
+## Example Data Table
 TikTok Usage and Influencing Factors (In countdowns, if the event passed the numbers will turn negative. If 0, then we are on the D-day)
 
 | Date       | TikTok Usage (Hours) | Total Screen Time (Hours) | Sleep Duration (Hours) | Temperature (°C) | Precipitation (mm) | Have Exam? | Hours of Class | Grammy Awards? | Oscar Awards? | Paris Fashion Week (Day) | Ramazan 2025 Countdown | Nowruz 1404 Countdown | New Year 2025 (Passed) Countdown | US Elections Period? | Turkey Elections Period? | Iran Elections Period? | UEFA Champions League Final? |
