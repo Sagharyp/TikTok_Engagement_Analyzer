@@ -16,10 +16,12 @@ This is my term project for DSA 210 (Introduction to Data Science).
    - [External Influencing Factors](#external-influencing-factors)  
    - [Personal Influencing Factors](#personal-influencing-factors)  
 5. [Research Questions](#research-questions)  
-6. [Possible Tools & Libraries To Be Used](#possible-tools--libraries-to-be-used)
+6. [Tools & Libraries Used](#tools--libraries-used)
 7. [Hypotheses and Results](#hypotheses-and-results)
-8. [Example Data Table](#example-data-table)
-
+8. [Machine Learning Models & Prediction](#machine-learning-models--prediction)
+9. [Key Findings](#key-findings)
+10. [Future Work](#future-work)
+11. [Example Data Table](#example-data-table)
 
 ---
 
@@ -52,7 +54,7 @@ Since TikTok is the social media app I use the most, analyzing my consumption pa
 ---
 
 ## Data Collection & Sources
-The analysis will be conducted using both personal data collected directly from TikTok and additional data from external sources that may influence my media consumption:
+The analysis was conducted using both personal data collected directly from TikTok and additional data from external sources that may influence my media consumption:
 
 ### The Primary Data Source:
   - Total hours spent on TikTok daily. *(Calculated from the TikTok app data)*
@@ -78,31 +80,33 @@ The analysis will be conducted using both personal data collected directly from 
 
 ### Personal Influencing Factors:
    - **Academic Responsibilities**
-     - Academic Calender *(Collected through Sabancı University Website)*
+     - Academic Calendar *(Collected through Sabancı University Website)*
    - **Weekend/Weekday**
      - Weekend/Weekday because of free time *(Collected through calendar)*     
 
 ---
 
-## Possible Tools & Libraries To Be Used
+## Tools & Libraries Used
 
 **1. Programming Language:**
 - **Python**: For data analysis and model building.
 
 **2. Data Analysis & Machine Learning:**
 - **Pandas**: For data manipulation/analysis.
-- **Numpy**: For numerical computing.
+- **NumPy**: For numerical computing.
+- **Scikit-learn**: For machine learning models and evaluation.
 
-**4. Data Visualization:**
+**3. Data Visualization:**
 - **Matplotlib**: For creating data visualizations.
 - **Seaborn**: For advanced data visualization and statistical graphics.
 
-**5. Data Collection:**
+**4. Data Collection:**
 - **TikTok**: To collect personal usage data.
 - **Weather API**: To get weather data for analysis. ([Link](https://www.google.com/url?q=https%3A%2F%2Fwww.visualcrossing.com%2Fweather-query-builder%2F))
 - **Sabancı University Website**: To get course/exam schedules for analysis.
 
 ---
+
 ## Hypotheses and Results
 
 ### 📅 Day
@@ -142,7 +146,7 @@ The analysis will be conducted using both personal data collected directly from 
   **Result:** It is observed that I spend more time when the event is closer.
 
 ### 🎊 2025 New Year (Countdown)
-- **H10:** TikTok usage may increase around New Year’s Day.  
+- **H10:** TikTok usage may increase around New Year's Day.  
   **Result:** It is observed that I spend more time when the event is closer.
 
 ### 🗳️ 2024 United States Presidential Election (Countdown)
@@ -167,14 +171,90 @@ The analysis will be conducted using both personal data collected directly from 
 
 ---
 
+## Machine Learning Models & Prediction
+
+### Dataset Overview
+The analysis was conducted on **245 days** of data with **21 features**, including weather conditions, global events, and personal factors.
+
+### Models Tested
+Four different machine learning models were implemented and evaluated:
+
+1. **Linear Regression**
+2. **Decision Tree Regressor**
+3. **Random Forest Regressor**
+4. **K-Nearest Neighbors Regressor**
+
+### Baseline Models
+Simple baseline predictors were established for comparison:
+- **Mean Predictor**: MAE = 98.79 videos
+- **Median Predictor**: MAE = 93.46 videos (best baseline)
+
+### Cross-Validation Results
+Using time-series cross-validation with 5 splits:
+
+| Model | Mean Absolute Error (MAE) |
+|-------|---------------------------|
+| K-Nearest Neighbors | 108.22 ± 17.82 |
+| Random Forest | 114.21 ± 22.93 |
+| Linear Regression | 134.05 ± 33.11 |
+| Decision Tree | 151.38 ± 37.99 |
+
+### Test Set Performance
+Unfortunately, all machine learning models performed worse than the baseline on the test set:
+
+| Model | MAE | RMSE | R² Score |
+|-------|-----|------|----------|
+| K-Nearest Neighbors | 179.01 | 202.03 | -3.525 |
+| Random Forest | 179.23 | 204.20 | -3.623 |
+| Linear Regression | 231.40 | 253.89 | -6.147 |
+| Decision Tree | 294.37 | 323.20 | -10.581 |
+
+**Note:** All models showed negative R² scores, indicating they performed worse than simply predicting the mean.
+
+---
+
+## Key Findings
+
+### Statistical vs. Practical Significance
+While most statistical tests did not return significant p-values, several visual patterns were observed:
+- **UEFA matches** showed noticeable impact on usage
+- **Fashion Week** periods correlated with increased consumption  
+- **Weekend vs. weekday** patterns were clearly evident
+- **Major events** (Grammy Awards, Oscars, Nowruz, New Year) showed trending effects
+
+These patterns suggest real-world effects that may become statistically significant with more data or additional features.
+
+### Model Performance Insights
+The machine learning models struggled to predict TikTok usage accurately, with the **Median Predictor baseline** (MAE = 93.46) outperforming all sophisticated models. This suggests that:
+- Current features may not capture the complexity of social media consumption patterns
+- More data or different feature engineering approaches may be needed
+- Personal usage patterns might be more random than initially hypothesized
+
+---
+
+## Future Work
+
+To improve the predictive model performance, future work will focus on:
+
+- **Data Collection**: Gathering more days of usage data for better model training
+- **Feature Engineering**: 
+  - Adding more granular time-based features (hour of day, day of week interactions)
+  - Including content-based features (trending topics, personal interests)
+  - Perhaps incorporating mood or emotional state indicators
+
+---
+
 ## Example Data Table
 
 TikTok Usage and Influencing Factors (Countdowns or Boolean)
 
-| Day         | Videos Watched | TikTok Usage (Hours) | FeelsLike (°C) | Precip (mm) | Snow (cm) | Snow Depth (cm) | Cloud Cover (%) | UV Index | General      | 2025 Grammy Awards (Countdown) | 2025 Oscar Awards (Countdown) | 2025 Paris Fashion Week (Bool) | 2025 Ramazan (Bool) | 1404 Nowruz (Countdown) | 2025 New Year (Countdown) | 2024 United States Presidential Election (Countdown) | 24/25 UEFA Champions League (Bool) | 24/25 School Year (Bool) | Weekday (Bool) | Weekend (Bool) |
-|-------------|----------------|-----------------------|----------------|-------------|-----------|-----------------|-----------------|----------|--------------|-------------------------------|-------------------------------|------------------------------|---------------------|------------------------|------------------------|----------------------------------------------------|----------------------------------|------------------------|----------------|----------------|
-| 2024-09-10  | 175            | 0.729                 | 24.9           | 0.0         | 0.0       | 0.0             | 58.8            | 6        | Partly Cloudy Day |                               |                               |                              |                     |                        |                        |                                                    |                                  |                        |                |                |
-| 2024-09-11  | 278            | 1.158                 | 25.7           | 8.0         | 0.0       | 0.0             | 53.0            | 6        | Rain         | 145.0                         | 173.0                         | 0.0                          | 0.0                 | 191.0                  | 112.0                  | 55.0                                              | 0.0                              | 0.0                    | 1.0            | 0.0            |
-| 2024-09-12  | 61             | 0.254                 | 25.5           | 16.0        | 0.0       | 0.0             | 40.3            | 7        | Rain         | 144.0                         | 172.0                         | 0.0                          | 0.0                 | 190.0                  | 111.0                  | 54.0                                              | 0.0                              | 0.0                    | 1.0            | 0.0            |
-| 2024-09-13  | 321            | 1.338                 | 26.1           | 0.0         | 0.0       | 0.0             | 17.1            | 7        | Clear Day    | 143.0                         | 171.0                         | 0.0                          | 0.0                 | 189.0                  | 110.0                  | 53.0                                              | 0.0                              | 0.0                    | 1.0            | 0.0            |
-| 2024-09-14  | 101            | 0.421                 | 27.0           | 0.0         | 0.0       | 0.0             | 43.3            | 7        | Partly Cloudy Day | 142.0                         | 170.0                         | 0.0                          | 0.0                 | 188.0                  | 109.0                  | 52.0                                              | 0.0                              | 0.0                    | 0.0            | 1.0            |
+| Day         | Videos Watched | TikTok Usage (Hours) | FeelsLike (°C) | Precip (mm) | Snow (cm) | Snow Depth (cm) | Cloud Cover (%) | UV Index | General             | 2025 Grammy Awards (Countdown) | 2025 Oscar Awards (Countdown) | 2025 Paris Fashion Week (Bool) | 2025 Ramazan (Bool) | 1404 Nowruz (Countdown) | 2025 New Year (Countdown) | 2024 United States Presidential Election (Countdown) | 24/25 UEFA Champions League (Bool) | 24/25 School Year (Bool) | Weekday (Bool) | Weekend (Bool) |
+|-------------|----------------|-----------------------|----------------|-------------|-----------|-----------------|-----------------|----------|----------------------|-------------------------------|-------------------------------|------------------------------|---------------------|------------------------|------------------------|----------------------------------------------------|----------------------------------|------------------------|----------------|----------------|
+| 2024-09-11  | 278            | 1.158                 | 25.7           | 8.0         | 0.0       | 0.0             | 53.0            | 6        | Rain                | 145.0                         | 173.0                         | 0.0                          | 0.0                 | 191.0                  | 112.0                  | 55.0                                              | 0.0                              | 0.0                    | 1.0            | 0.0            |
+| 2024-09-12  | 61             | 0.254                 | 25.5           | 16.0        | 0.0       | 0.0             | 40.3            | 7        | Rain                | 144.0                         | 172.0                         | 0.0                          | 0.0                 | 190.0                  | 111.0                  | 54.0                                              | 0.0                              | 0.0                    | 1.0            | 0.0            |
+| 2024-09-13  | 321            | 1.338                 | 26.1           | 0.0         | 0.0       | 0.0             | 17.1            | 7        | Clear Day           | 143.0                         | 171.0                         | 0.0                          | 0.0                 | 189.0                  | 110.0                  | 53.0                                              | 0.0                              | 0.0                    | 1.0            | 0.0            |
+| 2024-09-14  | 101            | 0.421                 | 27.0           | 0.0         | 0.0       | 0.0             | 43.3            | 7        | Partly Cloudy Day    | 142.0                         | 170.0                         | 0.0                          | 0.0                 | 188.0                  | 109.0                  | 52.0                                              | 0.0                              | 0.0                    | 0.0            | 1.0            |
+
+---
+
+*This project demonstrates the application of data science techniques to personal digital behavior analysis, providing insights into social media consumption patterns and the challenges of predicting complex human behaviors.*
